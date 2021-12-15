@@ -129,11 +129,11 @@ const PasteInput = forwardRef((props: PasteInputProps, ref) => {
     }, [inputRef]);
 
     useEffect(() => {
-        const inputRefValue = inputRef.current;
         // When unmounting we need to blur the input
         return () => {
             if (isFocused()) {
-                inputRefValue?.blur();
+                // eslint-disable-next-line react-hooks/exhaustive-deps
+                inputRef.current?.blur();
             }
         };
     }, [inputRef]);
