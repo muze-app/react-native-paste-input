@@ -132,6 +132,7 @@ const PasteInput = forwardRef((props: PasteInputProps, ref) => {
         // When unmounting we need to blur the input
         return () => {
             if (isFocused()) {
+                console.info('blur2');
                 // eslint-disable-next-line react-hooks/exhaustive-deps
                 inputRef.current?.blur();
             }
@@ -156,7 +157,10 @@ const PasteInput = forwardRef((props: PasteInputProps, ref) => {
             clear,
             isFocused,
             focus: () => inputRef.current?.focus(),
-            blur: () => inputRef.current?.blur(),
+            blur: () => {
+              console.info('blur1');
+              inputRef.current?.blur();
+            },
             setNativeProps: inputRef.current?.setNativeProps,
             ...(inputRef.current || {}),
         }),
