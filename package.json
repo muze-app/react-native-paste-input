@@ -30,11 +30,11 @@
     "test": "jest",
     "typescript": "tsc --noEmit",
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
-    "prepare": "bob build && husky install",
+    "prepare": "bob build",
     "release": "release-it",
     "example": "cd example && npm",
     "pods": "cd example && pod-install --quiet",
-    "bootstrap": "npm run example i && npm run pods"
+    "bootstrap": "npx --no-install husky install && npm run example i && npm run pods"
   },
   "keywords": [
     "react-native",
